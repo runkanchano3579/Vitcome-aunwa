@@ -1,0 +1,33 @@
+﻿@model showdata
+<h3 style="text-align:center;">อาจารย์</h3>
+<div class="form-group card-body card">
+    <p>รายละเอียดForm ของนักศึกษา</p>
+
+
+    <p>ชื่อนักศึกษา:@ViewBag.name</p>
+    <p>ชื่อเรื่องวิจัย:@ViewBag.title </p>
+    <p>Form cs1>> : @ViewBag.timeimage  </p> <a class="btn btn-primary" href="#" role="button">Download</a>
+
+
+
+    <span>ให้สถานะนักศึกษา</span>
+
+    <form asp-action="Comment"  asp-controller="BackendTeacher" method="get">
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-lg">Comment</span>
+                <input type="hidden" value="@ViewBag.id" id="idstudent" name="idstudent">
+            </div>
+            <input type="text"  class="form-control" asp-for="comment" value="" placeholder="comment">
+            <p><input  type="radio" class="btn btn-lg " id="status"  name="status" value="1"> Pass<br></p>
+            <p><input type="radio" id="status"  name="status" value="0"> Fail<br></p>
+
+
+
+
+           <button type="submit" class="btn btn-danger">Comfrim</button>
+        </div>
+    </form>
+</div>
+
+
